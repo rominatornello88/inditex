@@ -1,10 +1,9 @@
-package com.rtornello.inditex.infraestructure.rest;
+package com.rtornello.inditex.infraestructure;
 
 
 import com.rtornello.inditex.application.interfaces.PriceService;
 import com.rtornello.inditex.infraestructure.rest.dto.PriceDto;
 import java.util.UUID;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -29,16 +28,20 @@ public class PricesController {
 
     @GetMapping("/testing")
     public ResponseEntity<String> testing() {
+        //log.info("testing");
         return new ResponseEntity<>("testing", HttpStatus.OK);
     }
 
+
     @GetMapping("/price/{id}")
-    public ResponseEntity<PriceDto> getUserById(@PathVariable UUID id) {
+    public ResponseEntity<PriceDto> getPriceById(@PathVariable UUID id) {
+        //log.info("REST Get Price By Id ");
         return new ResponseEntity<>(priceService.getPrice(id), HttpStatus.OK);
     }
 
     @PostMapping("")
     public ResponseEntity<PriceDto> saveUser(@RequestBody PriceDto priceDto) {
+        //log.info("REST save Price ");
         return new ResponseEntity<>(
             priceService.savePrice(priceDto),
             HttpStatus.CREATED);
