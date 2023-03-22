@@ -1,8 +1,8 @@
 package com.rtornello.inditex.infraestructure;
 
 
-import com.rtornello.inditex.application.interfaces.PriceService;
 import com.rtornello.inditex.infraestructure.rest.dto.PriceDto;
+import com.rtornello.inditex.application.interfaces.PriceService;
 import java.util.UUID;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/prices", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(path = "/api/prices", produces = MediaType.APPLICATION_JSON_VALUE)
 @Slf4j
 public class PricesController {
 
@@ -33,7 +33,7 @@ public class PricesController {
     }
 
 
-    @GetMapping("/price/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<PriceDto> getPriceById(@PathVariable UUID id) {
         //log.info("REST Get Price By Id ");
         return new ResponseEntity<>(priceService.getPrice(id), HttpStatus.OK);
