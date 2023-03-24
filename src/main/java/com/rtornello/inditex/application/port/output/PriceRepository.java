@@ -1,6 +1,6 @@
 package com.rtornello.inditex.application.port.output;
 
-import com.rtornello.inditex.domain.model.Price;
+import com.rtornello.inditex.infraestructure.data.Price;
 import java.io.Serializable;
 import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;

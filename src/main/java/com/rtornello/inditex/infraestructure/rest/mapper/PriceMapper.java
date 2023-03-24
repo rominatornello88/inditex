@@ -1,7 +1,7 @@
 package com.rtornello.inditex.infraestructure.rest.mapper;
 
 import com.rtornello.inditex.infraestructure.rest.dto.PriceDto;
-import com.rtornello.inditex.domain.model.Price;
+import com.rtornello.inditex.infraestructure.data.Price;
 import org.mapstruct.Mapper;
 
 

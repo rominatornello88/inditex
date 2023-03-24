@@ -1,4 +1,4 @@
-package com.rtornello.inditex.infraestructure;
+package com.rtornello.inditex.infraestructure.rest.controller;
 
 
 import com.rtornello.inditex.infraestructure.rest.dto.PriceDto;
