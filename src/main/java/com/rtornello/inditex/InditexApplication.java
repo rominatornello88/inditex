@@ -11,7 +11,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class InditexApplication {
 
 	public static void main(String[] args) {
-		System.out.println("----------HOLA PEPE----------");
 		SpringApplication.run(InditexApplication.class, args);
 	}
 

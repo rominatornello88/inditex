@@ -1,8 +1,9 @@
-package com.rtornello.inditex.infraestructure.data;
+package com.rtornello.inditex.infraestructure.adapters.output.data;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 import java.time.LocalDateTime;
-import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,25 +12,31 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="prices")
-public class Price {
+@Table(name = "prices")
+@Getter
+@Setter
+public class PriceData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", updatable = false, nullable = false, columnDefinition = "VARCHAR(36)")
-    private UUID id;
+    @Column(name = "id", updatable = false, nullable = false)
+    private Integer id;
 
     @Column(name = "start_date")
     @NotNull
+    @JsonFormat(pattern="yyyy-MM-dd-HH.mm.ss")
     private LocalDateTime startDate;
 
     @Column(name = "end_date")
     @NotNull
+    @JsonFormat(pattern="yyyy-MM-dd-HH.mm.ss")
     private LocalDateTime endDate;
 
     @Column(name = "price_list")
@@ -49,12 +56,12 @@ public class Price {
     private String currency;
 
     @ManyToOne
-    @NotNull
-    private Brand brand;
+    @JsonIgnoreProperties(value = "prices", allowSetters = true)
+    private BrandData brand;
 
     @ManyToOne
-    @NotNull
-    private Product product;
+    @JsonIgnoreProperties(value = "prices", allowSetters = true)
+    private ProductData product;
 
 
 }

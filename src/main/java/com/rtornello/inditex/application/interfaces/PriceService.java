@@ -1,12 +1,11 @@
 package com.rtornello.inditex.application.interfaces;
 
 
-import com.rtornello.inditex.infraestructure.rest.dto.PriceDto;
-import java.util.UUID;
+import com.rtornello.inditex.domain.model.Price;
+
 
 public interface PriceService {
 
 
-    PriceDto getPrice(UUID id);
-    PriceDto savePrice(PriceDto toDomain);
+    Price getPrice(Integer id);
 }

@@ -1,10 +1,13 @@
 # # Microservice inditex
 
 - Package infrastructure\  son los elementos externos con los que se comunica la aplicación, tanto de entrada como de salida.
-   -          controller\  
-   -          dto\  
-   -          mapper\  
-   -          respurce\  
+   -          adapters\
+       -        input rest  
+         -          controller\
+       -        output  
+         -          data\  
+         -          mapper\  
+         -          repository\  
 
 
 - Package application\   En esta capa solemos tener los casos de uso, también llamados acciones o servicios de aplicación.

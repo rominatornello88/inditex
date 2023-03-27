@@ -1,9 +1,9 @@
-package com.rtornello.inditex.infraestructure.rest.dto;
+package com.rtornello.inditex.domain.model;
 
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,14 +12,17 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PriceDto {
+@Builder
+public class Price {
 
-    private UUID uuid;
-    private LocalDateTime startDate = LocalDateTime.now();
-    private LocalDateTime endDate = LocalDateTime.now();
+    private Integer id;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
     private String priceList;
     private String priority;
     private Float price;
     private String currency;
+    private Integer brandId;
+    private Integer productId;
 
 }
