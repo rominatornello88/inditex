@@ -56,11 +56,11 @@ public class PriceData {
     private String currency;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = "prices", allowSetters = true)
+    @NotNull
     private BrandData brand;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = "prices", allowSetters = true)
+    @NotNull
     private ProductData product;
 
 

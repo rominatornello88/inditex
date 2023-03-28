@@ -23,17 +23,11 @@ public class PricesController {
         this.priceService = priceService;
     }
 
-    @GetMapping("/testing")
-    public ResponseEntity<String> testing(@RequestParam String name) {
-        log.info("testing");
-        return new ResponseEntity<>("testing " + name, HttpStatus.OK);
-    }
 
-
-    @GetMapping("/")
-    public ResponseEntity<Price> getPriceById(@RequestParam("priceId") Integer priceId) {
+    @GetMapping("/t")
+    public ResponseEntity<Price> getPriceById(@RequestParam("date") String dateTime, @RequestParam("productId") Integer productId, @RequestParam("brandId") Integer brandId) {
         log.info("REST Get Price By Id ");
-        return new ResponseEntity<>(priceService.getPrice(priceId), HttpStatus.OK);
+        return new ResponseEntity<>(priceService.getPrice(dateTime, productId, brandId), HttpStatus.OK);
     }
 
 
