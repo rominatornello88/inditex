@@ -2,7 +2,7 @@ package com.rtornello.inditex.infraestructure.input.rest;
 
 
 import com.rtornello.inditex.application.port.PriceService;
-import com.rtornello.inditex.domain.Exceptions.PriceNotFoundException;
+import com.rtornello.inditex.domain.exceptions.PriceNotFoundException;
 import com.rtornello.inditex.domain.model.Price;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -32,11 +32,11 @@ public class PricesController {
     @ApiOperation(value = "Finds price matching passed parameters")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "successful operation")})
-    public ResponseEntity<Price> getPriceById(@RequestParam("date") String dateTime,
+    public ResponseEntity<Price> getPriceByParameters(@RequestParam("date") String dateTime,
         @RequestParam("productId") Integer productId, @RequestParam("brandId") Integer brandId)
         throws PriceNotFoundException {
-        log.info("REST Get Price By Id ");
-        return new ResponseEntity<>(priceService.getPrice(dateTime, productId, brandId),
+        log.info("REST Get Price By Parameters ");
+        return new ResponseEntity<>(priceService.getPriceByParameters(dateTime, productId, brandId),
             HttpStatus.OK);
     }
 

@@ -1,4 +1,4 @@
-package com.rtornello.inditex.domain.Exceptions;
+package com.rtornello.inditex.domain.exceptions;
 
 public class PriceNotFoundException extends Exception {
 

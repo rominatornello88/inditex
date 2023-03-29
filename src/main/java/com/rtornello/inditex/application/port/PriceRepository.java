@@ -10,9 +10,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PriceRepository extends JpaRepository<PriceData, Serializable> {
 
-    PriceData findByProductIdAndBrandId(Integer product, Integer brandId);
-
-    List<PriceData> findByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqual(Integer product, Integer brandId,LocalDateTime endDate, LocalDateTime startDate);
+    List<PriceData> findByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqual(
+        Integer product, Integer brandId, LocalDateTime endDate, LocalDateTime startDate);
 
 
 }

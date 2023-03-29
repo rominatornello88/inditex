@@ -2,13 +2,13 @@ package com.rtornello.inditex.application.port;
 
 
 import com.rtornello.inditex.domain.model.Price;
-import com.rtornello.inditex.domain.Exceptions.PriceNotFoundException;
+import com.rtornello.inditex.domain.exceptions.PriceNotFoundException;
 
 
 public interface PriceService {
 
 
-    Price getPrice(String dateTime, Integer productId, Integer brandId)
+    Price getPriceByParameters(String dateTime, Integer productId, Integer brandId)
         throws PriceNotFoundException;
 
 }
