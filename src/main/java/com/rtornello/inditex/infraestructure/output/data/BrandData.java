@@ -1,5 +1,4 @@
-package com.rtornello.inditex.infraestructure.adapters.output.data;
-
+package com.rtornello.inditex.infraestructure.output.data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,18 +14,20 @@ import lombok.Setter;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "products")
+@Table(name="brands")
 @Getter
 @Setter
-public class ProductData {
+public class BrandData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", updatable = false, nullable = false)
-    Integer id;
+    private Integer id;
 
 
     @Column(name = "name")
-    String name;
+    private String name;
+
+
 
 }

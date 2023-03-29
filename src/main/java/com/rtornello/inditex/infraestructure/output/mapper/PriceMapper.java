@@ -1,7 +1,7 @@
-package com.rtornello.inditex.infraestructure.adapters.output.mapper;
+package com.rtornello.inditex.infraestructure.output.mapper;
 
 import com.rtornello.inditex.domain.model.Price;
-import com.rtornello.inditex.infraestructure.adapters.output.data.PriceData;
+import com.rtornello.inditex.infraestructure.output.data.PriceData;
 import org.springframework.stereotype.Component;
 
 

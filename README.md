@@ -35,7 +35,7 @@
 # URLs Access
 
 ##  Swagger:
-http://localhost:8082/swagger-ui.html
+http://localhost:8082/swagger-ui-custom.html
 
 ##  BD H2:
 http://localhost:8082/h2-console
@@ -48,4 +48,8 @@ http://localhost:8082/h2-console
 |----------------|----------------------------------|
 |**run**		|`mvnw spring-boot:run `            |            
 |**test**       |`mvnw test`            |    
+
+// TODO ADD 
+* TEST
+* EXCEPTION
 

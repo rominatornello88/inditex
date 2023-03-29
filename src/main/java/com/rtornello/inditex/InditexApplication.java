@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @ComponentScan(basePackages = "com.rtornello.inditex.*")
-@EnableJpaRepositories(basePackages = "com.rtornello.inditex.application.port.output")
+@EnableJpaRepositories(basePackages = "com.rtornello.inditex.application.port")
 public class InditexApplication {
 
 	public static void main(String[] args) {

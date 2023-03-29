@@ -1,7 +1,6 @@
-package com.rtornello.inditex.infraestructure.adapters.output.data;
+package com.rtornello.inditex.infraestructure.output.data;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 import java.time.LocalDateTime;
 import javax.persistence.Column;
