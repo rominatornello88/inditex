@@ -19,7 +19,7 @@ public class Price {
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private String priceList;
-    private String priority;
+    private Integer priority;
     private Float price;
     private String currency;
     private Integer brandId;

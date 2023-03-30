@@ -1,4 +1,4 @@
-package com.rtornello.inditex.application.port;
+package com.rtornello.inditex.infraestructure.output.repository;
 
 import com.rtornello.inditex.infraestructure.output.data.PriceData;
 import java.io.Serializable;

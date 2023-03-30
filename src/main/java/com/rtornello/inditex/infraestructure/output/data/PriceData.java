@@ -46,7 +46,7 @@ public class PriceData {
 
     @Column(name = "priority")
     @NotNull
-    private String priority;
+    private Integer priority;
 
     @Column(name = "price")
     @NotNull

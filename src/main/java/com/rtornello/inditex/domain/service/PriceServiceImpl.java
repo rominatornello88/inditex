@@ -1,15 +1,15 @@
 package com.rtornello.inditex.domain.service;
 
 
-import com.rtornello.inditex.application.port.PriceRepository;
 import com.rtornello.inditex.application.port.PriceService;
-import com.rtornello.inditex.domain.exceptions.PriceNotFoundException;
 import com.rtornello.inditex.domain.constants.ConstantPrice;
+import com.rtornello.inditex.domain.exceptions.PriceNotFoundException;
 import com.rtornello.inditex.domain.model.Price;
+import com.rtornello.inditex.domain.utils.DateUtils;
 import com.rtornello.inditex.infraestructure.output.data.PriceData;
 import com.rtornello.inditex.infraestructure.output.mapper.PriceMapper;
+import com.rtornello.inditex.infraestructure.output.repository.PriceRepository;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -32,8 +32,9 @@ public class PriceServiceImpl implements PriceService {
 
     public Price getPriceByParameters(String dateTime, Integer productId, Integer brandId)
         throws PriceNotFoundException {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(ConstantPrice.YYYY_MM_DD_HH_MM);
-        LocalDateTime dateTimeFormatter = LocalDateTime.parse(dateTime, formatter);
+
+        LocalDateTime dateTimeFormatter = DateUtils.getLocalDateTime(dateTime);
+
         List<PriceData> priceDataList = priceRepository.findByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqual(
             productId, brandId, dateTimeFormatter, dateTimeFormatter);
 
