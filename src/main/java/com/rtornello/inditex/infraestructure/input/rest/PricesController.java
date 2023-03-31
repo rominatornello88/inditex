@@ -4,7 +4,7 @@ package com.rtornello.inditex.infraestructure.input.rest;
 import com.rtornello.inditex.application.port.PriceService;
 import com.rtornello.inditex.domain.exceptions.PriceNotFoundException;
 import com.rtornello.inditex.domain.model.Price;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
@@ -29,7 +29,7 @@ public class PricesController {
 
 
     @GetMapping("/")
-    @ApiOperation(value = "Finds price matching passed parameters")
+    @Operation(summary = "Finds price matching passed parameters")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "successful operation")})
     public ResponseEntity<Price> getPriceByParameters(@RequestParam("date") String dateTime,
